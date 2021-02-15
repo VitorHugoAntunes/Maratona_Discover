@@ -74,6 +74,7 @@ const Transaction = {
     return expense;
   },
   total() {
+    let total = 0;
     // entradas - saidas
     return Transaction.incomes() + Transaction.expenses();
   },
@@ -121,6 +122,15 @@ const DOM = {
     document.getElementById('totalDisplay').innerHTML = Utils.formatCurrency(
       Transaction.total()
     );
+
+    // Condicao para que se o total for negativo, adiciona a classe negative para a cor da aplicaco se tornar vermelha
+    if (Transaction.total() < 0) {
+      document.querySelector('.total').classList.add('negative');
+      document.querySelector('header').classList.add('negative');
+    } else {
+      document.querySelector('.total').classList.remove('negative');
+      document.querySelector('header').classList.remove('negative');
+    }
   },
 
   clearTransaction() {
