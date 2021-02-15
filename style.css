@@ -5,6 +5,7 @@
   --green: #49aa26;
   --light-green: #3dd705;
   --red: #e92929;
+  --dark-red: #9b1e1e;
 }
 
 * {
@@ -113,6 +114,12 @@ header {
   text-align: center;
 }
 
+header.negative {
+  background: var(--dark-red);
+  padding: 2rem 0 10rem;
+  text-align: center;
+}
+
 #logo {
   color: #fff;
   font-weight: 100;
@@ -158,6 +165,11 @@ header {
 
 .card.total {
   background: var(--green);
+  color: white;
+}
+
+.card.total.negative {
+  background: var(--red);
   color: white;
 }
 
